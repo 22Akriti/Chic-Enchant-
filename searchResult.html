@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="searchResult.css">
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="page-container">
+        <div class="container">
+            <header>
+                <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+                <nav>
+                    <ul id="navbar">
+                        <li class="dropdown" id="profileDropdown">
+                            <a href="#" class="dropbtn">PROFILE</a>
+                            <div class="dropdown-content">
+                                <a href="signup.html">Sign Up</a>
+                                <a href="login.html">Login</a>
+                                <a href="profile.html">My Profile</a>
+                            </div>
+                        </li>
+                        <li><a href="navbag.html" class="dropbtn">BAG</a></li>
+                        <li><a href="wishlist.html" class="dropbtn">WISHLIST</a></li>
+                        <li class="_dropdown" id="menuDropdown">
+                            <a href="#" class="_dropbtn"><i class='bx bx-menu' style='color:black',></i></a>
+                            <div class="_dropdown-content">
+                                <a href="mencollection.html">Men</a>
+                                <a href="womencollection.html">Women</a>
+                                <a href="cosmetic.html">Cosmetics</a>
+                                <a href="perfumes.html">Fragrances</a>
+                                <a href="bag.html">Bags</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="searchBar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="textSearched()">Search</button>
+            </div>
+        </div>
+
+        <section id="products">
+            <div class="container">
+                <div id="searchResult" class="listProduct"></div>
+            </div>
+        </section>
+    </div>
+    <script src="searchResult.js"></script>
+    <script src="app2.js"></script>
+</body>
+</html>

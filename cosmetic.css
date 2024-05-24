@@ -1,0 +1,282 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.product-item {
+    border: 1px solid black;
+    margin: 0;
+    margin-bottom: 20px; /* Add some space between rows */
+    flex: 0 0 calc(25% - 2px);
+    box-sizing: border-box;
+}
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+#products{
+padding: 5px 5px 5px;
+}
+
+#header {
+    background-image: url(/img/cosmetic.jpg);
+    background-size: cover;
+    background-position: top 0px;
+    position: relative;
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    background-color: transparent;
+    transition: transform 0.3s ease; /* Add transition for transform property */
+}
+
+.logo:hover {
+    transform: translateY(-5px); /* Move the logo up by 5 pixels on hover */
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Initial position alignment */
+    transition: all 0.85s ease-out; /* Smooth and slow transition */
+    background-color: transparent;
+}
+
+#navbar {
+    display: flex;
+    list-style: none;
+}
+
+#navbar li {
+    margin-right: 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#navbar li a:hover{
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
+
+nav.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    z-index: 1000;
+    justify-content: center; /* Center alignment when fixed */
+}
+
+.container {
+    padding-top: 100px; /* Ensure content does not hide behind the fixed navbar */
+}
+
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+    position: absolute;
+    font-size: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.8; 
+    left: -450px;
+    top: -25px;
+    animation: slideInFromBottom 2.5s ease-in-out ;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#searchDropdown form {
+    position: relative;
+}
+
+#searchDropdown input[type="text"] {
+    border: none;
+    border-bottom: 1.5px solid #a6a6a6;
+    padding: 10px 20px;
+    margin-right: -10px;
+    width:200px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+#searchDropdown input[type="text"]:focus {
+    outline: none;
+    border-bottom-color: black; 
+}
+
+#searchDropdown button[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#searchDropdown button[type="submit"]:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dropbtn:hover {
+    cursor: pointer;
+}
+
+.bx.bx-menu-dropdown {
+    position: relative;
+}
+
+
+._dropdown {
+    position: relative;
+}
+
+._dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 100px;
+}
+
+._dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+._dropdown:hover ._dropdown-content {
+    transform: translateX(-12vh);
+    display: block;
+}
+
+._dropbtn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+._dropbtn:hover {
+    cursor: pointer;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 50px 0;
+}
+
+.container6 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-left,.footer-right {
+    width: 50%;
+    justify-content: center;
+
+}
+
+.footer h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Georgia;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 40%;
+    justify-content: center;
+    line-height: 1.5;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block; /* To ensure transform works properly */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    transform: translateY(-5px);
+}

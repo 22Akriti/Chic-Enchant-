@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAG</title>
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-kcDd9xhPC8YZN0oXZJOt75O8b6YOugjtUsXU+GI4d0aEgjNNPaq+C0U0LdwbW2vEa6Uxnl5nRcG/gDHnnH7XfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<style>
+    body{
+    margin: 0;
+    font-family: Poppins;
+}
+
+.container{
+    width:100vw;
+    padding: 0;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+   
+    transition: transform .5s;
+}
+
+.logo {
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    background-color: transparent;
+    transition: transform 0.3s ease; /* Add transition for transform property */
+}
+
+.logo:hover {
+    transform: translateY(-5px); /* Move the logo up by 5 pixels on hover */
+}
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Initial position alignment */
+    transition: all 0.85s ease-out; /* Smooth and slow transition */
+    background-color: transparent;
+  }
+
+
+#navbar {
+    display: flex;
+    list-style: none;
+}
+
+
+#navbar li {
+    margin-right: 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+#navbar li a:hover{
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
+
+nav.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    z-index: 1000;
+    justify-content: center; /* Center alignment when fixed */
+}
+
+.container {
+    padding-top: 60px; /* Ensure content does not hide behind the fixed navbar */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dropbtn:hover {
+    cursor: pointer;
+}
+
+.bx.bx-menu-dropdown {
+    position: relative;
+}
+
+
+._dropdown {
+    position: relative;
+}
+
+._dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 100px;
+}
+
+._dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+._dropdown:hover ._dropdown-content {
+    transform: translateX(-12vh);
+    display: block;
+}
+
+._dropbtn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+._dropbtn:hover {
+    cursor: pointer;
+}
+
+
+p{
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+p:hover{
+    text-decoration: underline;
+}
+body{
+    margin: 0;
+    font-family: Poppins;
+}
+.container{
+    width:100vw;
+    padding: 0;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+
+p{
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+p:hover{
+    text-decoration: underline;
+}
+
+.icon-cart i {
+    font-size: 25px; 
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    top: 50%;
+    right: -20px;
+}
+.title{
+    font-size: xx-large;
+}
+.listProduct .item img{
+    width: 100%; 
+     height:100%;
+     display: block;
+     margin: 0 auto; 
+}
+.listProduct{
+    margin-top: 90px;
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding:0;
+   
+}
+.listProduct .item{
+    width: 350px;
+    height:350px;
+    padding: 0;
+    margin-left:0;
+    border: 2px solid #f0f0f0;
+    margin-bottom: 40px; /* Add some space between rows */
+    flex: 0 0 calc(5% -1px); /* Each product box takes 25% of the width with margin adjustment */
+    box-sizing: border-box;
+}
+.listProduct .item h2{
+    font-size: 15px;
+    padding: 10px;
+    margin-left: -10px;
+    margin-bottom: 25px;
+}
+.listProduct .item .price{
+    margin-top: -25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.heart-icon {
+    display: inline;
+    top: 10px;
+    margin-right:0;
+    color: black; 
+    font-size: 24px;
+    cursor: pointer;
+}
+.heart-icon.clicked {
+    color: red; 
+}
+.heart.clicked:active{
+    color:red;
+}
+.heart.active{
+    color:red;
+}
+.listProduct .item button{
+    font-family: 'Times New Roman';
+    width: 90%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom:20px ;
+}
+.listProduct .item button:hover {
+    text-decoration: underline;
+    transition: transform 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.cartTab{
+    width: 395px;
+    height: 600px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+    border: 1.5px solid black;
+
+}
+body.showCart .cartTab{
+    right: 0;
+}
+body.showCart .container{
+    transform: translateX(-0px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 28px 45px;
+}
+.cartTab .close{
+    background-color: black;
+    margin-left: 35px;
+    padding: 0px 30px;
+}
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: black;
+    cursor: auto;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.checkOut {
+    text-decoration: none;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    width: 100%;
+    display: block;
+    width: calc(100% - 40px); /* Adjusted width to account for padding */
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 20px; /* Positioned at the bottom of the box */
+    left: 0px; /* Adjusted to align with box padding */
+}
+
+.checkOut:hover {
+    transform: translateY(-5px); /* Move the button slightly upwards */
+    text-decoration: underline; /* Underline the text on hover */
+}
+
+.item {
+    display: flex;
+    border: 2px solid #f0f0f0;
+    width: calc(100% - 40px); /* Adjusted width to fit within the container */
+    margin-bottom: 20px; /* Reduced margin bottom to create space between items */
+    box-sizing: border-box;
+}
+
+.item-left, .item-right {
+    flex: 1; /* Each side will take up 50% of the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.item-left {
+    background-color: #f9f9f9; /* Optional: add background color for better visual separation */
+}
+
+.item-left img {
+    max-width: 100%;
+    max-height: 75%;
+    object-fit: cover; /* Ensure the image fits within its container without distorting */
+}
+
+.item-right {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    font-size: 20px;
+    height: 80%;
+    margin-top: 40px;
+}
+
+.item-right h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.item-right .price {
+    margin: 10px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: -8px;
+}
+
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 30px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+
+.item-right .viewDetails, .item-right .addCart {
+    margin-top: 10px;
+    margin-left: -8px;
+    font-size: small;
+}
+
+.item-right .addCart {
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.item-right .addCart:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.total{
+
+    margin-left: 60px;
+}
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+</style>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" height="270px"></a>
+            <nav>
+                <ul id="navbar">
+                    <li class="dropdown" id="searchDropdown">
+                        <a href="searchResult.html" class="dropbtn">SEARCH</a>
+                    </li>
+                    <li class="dropdown" id="profileDropdown">
+                        <a href="#" class="dropbtn">PROFILE</a>
+                        <div class="dropdown-content">
+                            <a href="signup.html">Sign Up</a>
+                            <a href="login.html">Login</a>
+                            <a href="profile.html">My Profile</a>
+                        </div>
+                    </li>
+                    <li><a href="navbag.html" class="dropbtn">BAG</a></li>
+                    <li><a href="wishlist.html" class="dropbtn">WISHLIST</a></li>
+                    <li class="_dropdown" id="menuDropdown">
+                        <a href="#" class="_dropbtn"><i class='bx bx-menu' style='color:black',></i></a>
+                        <div class="_dropdown-content">
+                            <a href="mencollection.html">Men</a>
+                            <a href="womencollection.html">Women</a>
+                            <a href="cosmetic.html">Cosmetics</a>
+                            <a href="perfumes.html">Fragrances</a>
+                            <a href="bag.html">Bags</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section id="products">
+        <div class="container">
+            <div id="cartItem-container" class="listProduct"></div>
+        </div> </section> 
+        <div class="total">
+            <div>
+            <h2>Total price : Rs.<span class="totalpp">0</span></h2><a id = "checkout-link" href="checkout.html"><br><button class="checkOut">PLACE ORDER</button></a></div>
+        </div>
+   
+
+<script src="app.js"></script>
+<script>
+    let toggleStop = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const checkoutLink = document.getElementById('checkout-link');
+
+    if (!toggleStop) {
+        checkoutLink.href = "checkout.html";
+        // console.log("hello");
+
+    } else {
+        checkoutLink.href ="navbag.html"; // or any other action you want to take
+       
+        alert("Bag is Empty");
+    }
+});
+
+const displayCartItem = () => {
+    const cartItem = JSON.parse(localStorage.getItem('cartItem')) || [];
+    const cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || {}; // New line to retrieve stored quantities
+    const cartItemContainer = document.getElementById('cartItem-container');
+    cartItemContainer.innerHTML = '';
+    let totalPrice = 0;
+    if (cartItem.length > 0) {
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                cartItem.forEach(productId => {
+                    const product = products.find(p => p.id === productId);
+                    if (product) {
+                        let productItem = document.createElement('div');
+                        productItem.classList.add('cartItem-item');
+                        const quantity = cartQuantity[productId] || 1; // Retrieve the quantity or default to 1 if not found
+                        productItem.innerHTML =
+                            `<div class="item">
+    <div class="item-left">
+        <img src="${product.image}" alt="${product.name}">
+    </div>
+    <div class="item-right">
+        <h2>${product.name}</h2>
+        <div class="price">Rs.<span class="product-price">${product.price}</span></div>
+        <div class="quantity-controls">
+            <button class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
+            <span class="quantity" id="quantity-${product.id}">${quantity}</span>
+            <button class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
+        </div>
+        <p class="viewDetails">View Details</p>
+        <button class="addCart" onclick="removeFromCartItem(${product.id})"><h3>Remove From Bag</h3></button>
+    </div>
+</div>`;
+                        cartItemContainer.appendChild(productItem);
+                        totalPrice += parseFloat(product.price) * quantity; // Multiply by quantity
+                    }
+                });
+                const totalppSpan = document.querySelector('.totalpp');
+                totalppSpan.textContent = totalPrice.toFixed(2);
+                toggleStop = !toggleStop;
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+            });
+    } else {
+        toggleStop = !toggleStop;
+        cartItemContainer.textContent = 'Your Bag is empty.';
+    }
+};
+
+const updateQuantity = (productId, change) => {
+    const quantityElement = document.getElementById(`quantity-${productId}`);
+    let quantity = parseInt(quantityElement.textContent);
+    quantity += change;
+
+    if (quantity < 1) {
+        // Remove the product from the cart if quantity goes below 1
+        removeFromCartItem(productId);
+        location.reload(); 
+        return;
+    }
+
+    quantityElement.textContent = quantity;
+
+    // Update the quantity in localStorage
+    let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || {};
+    cartQuantity[productId] = quantity;
+    localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+
+    // Update total price
+    const cartItem = JSON.parse(localStorage.getItem('cartItem')) || [];
+    fetch('products.json')
+        .then(response => response.json())
+        .then(products => {
+            let totalPrice = 0;
+            cartItem.forEach(id => {
+                const itemQuantity = cartQuantity[id] || 1; // Retrieve quantity from cartQuantity
+                const item = products.find(p => p.id === id);
+                if (item) {
+                    totalPrice += parseFloat(item.price) * itemQuantity;
+                }
+            });
+            const totalppSpan = document.querySelector('.totalpp');
+            totalppSpan.textContent = totalPrice.toFixed(2);
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+        });
+};
+
+const removeFromCartItem = (productId) => {
+    let cartItem = JSON.parse(localStorage.getItem('cartItem')) || [];
+    let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || {}; // Retrieve cart quantities
+    cartItem = cartItem.filter(id => id !== productId); // Remove the productId from the cart array
+    delete cartQuantity[productId]; // Remove the quantity for the productId
+    localStorage.setItem('cartItem', JSON.stringify(cartItem));
+    localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity)); // Update localStorage with new cart quantities
+    location.reload();
+    displayCartItem(); // Refresh the cart display
+};
+
+displayCartItem();
+</script>
+
+</body>
+</html>

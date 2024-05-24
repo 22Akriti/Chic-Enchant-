@@ -1,0 +1,211 @@
+body{
+    margin: 0;
+    font-family: Poppins;
+}
+.container{
+    width:100vw;
+    padding: 0;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+
+p{
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+p:hover{
+    text-decoration: underline;
+}
+
+.icon-cart i {
+    font-size: 25px; 
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    top: 50%;
+    right: -20px;
+}
+.title{
+    font-size: xx-large;
+}
+.listProduct .item img{
+    width: 100%; 
+     height:73%;
+     display: block;
+     margin: 0 auto; 
+}
+.listProduct{
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding:0;
+   
+}
+.listProduct .item{
+    width: 273px;
+    height:500px;
+    padding: 0;
+    margin-left:0;
+    border: 2px solid #f0f0f0;
+    margin-bottom: 40px; /* Add some space between rows */
+    flex: 0 0 calc(5% -1px); /* Each product box takes 25% of the width with margin adjustment */
+    box-sizing: border-box;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.listProduct .item .price{
+    margin-top: -25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.heart-icon {
+    display: inline;
+    top: 10px;
+    margin-right:0;
+    color: black; 
+    font-size: 24px;
+    cursor: pointer;
+}
+.heart-icon.clicked {
+    color: red; 
+}
+.listProduct .item button{
+    width: 80%;
+        background-color: white;
+        border: 2px solid black;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        margin-bottom:20px ;
+}
+.listProduct .item button:hover {
+    text-decoration: underline;
+}
+
+.cartTab{
+    width: 395px;
+    height: 600px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+    border: 1.5px solid black;
+
+}
+body.showCart .cartTab{
+    right: 0;
+}
+body.showCart .container{
+    transform: translateX(-0px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 28px 45px;
+}
+.cartTab .close{
+    background-color: black;
+    margin-left: 35px;
+    padding: 0px 30px;
+}
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: black;
+    cursor: auto;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

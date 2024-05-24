@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .box {
+            width: 40%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            box-sizing: border-box;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            position: absolute;
+        }
+
+        #order-summary {
+            height: 67%;
+            z-index: 1;
+            transform: translateX(0);
+        }
+
+        #order-summary.active {
+            transform: translateX(-50%);
+        }
+
+        #address-form {
+            height: 67%;
+            opacity: 0;
+            right: -50%;
+        }
+
+        #address-form.active {
+            right: 50vh;
+            opacity: 1;
+            transform: translateX(50%);
+        }
+
+        #address-form form div {
+            margin-bottom: 10px; /* Added space between form elements */
+        }
+        
+        #address-form form div input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ccc; /* Underline style */
+            background-color: transparent;
+            transition: border-bottom-color 0.5s ease;
+            margin-top: 5px; /* Added margin between label and input */
+        }
+        
+        #address-form form button[type="submit"] {
+            font-family: 'Times New Roman';
+            font-size: 15px;
+            display: block;
+            width: calc(100% - 40px); /* Adjusted width to account for padding */
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px; /* Positioned at the bottom of the box */
+            left: 20px; /* Adjusted to align with box padding */
+            transition: transform 0.3s ease; /* Added transition property for smooth animation */
+        }
+
+        #address-form form button[type="submit"]:hover {
+            transform: translateY(-5px); /* Move the button slightly upwards */
+            text-decoration: underline; /* Underline the text on hover */
+        }
+        
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+            max-height: 200px; /* Set a maximum height for the list */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        #total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        #confirm-order {
+            font-family: 'Times New Roman';
+            font-size: 15px;
+            display: block;
+            width: calc(100% - 40px); /* Adjusted width to account for padding */
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px; /* Positioned at the bottom of the box */
+            left: 20px; /* Adjusted to align with box padding */
+            transition: transform 0.3s ease; /* Added transition property for smooth animation */
+        }
+
+        #confirm-order:hover {
+            transform: translateY(-5px); /* Move the button slightly upwards */
+            text-decoration: underline; /* Underline the text on hover */
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cart-item-image {
+            margin-bottom: 12px;
+            width: 100px;
+            height: 105px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-details h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .cart-item-details .price {
+            color: #888;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="order-summary" class="box">
+            <header>
+                <h1>Order Summary</h1>
+            </header>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div id="total">
+                <strong>Total Price to Pay:</strong> Rs. <span id="totalPrice"></span>
+            </div>
+            <button id="confirm-order">Confirm Order</button>
+        </div>
+
+        <div id="address-form" class="box">
+            <header>
+                <h1>Shipping Address</h1>
+            </header>
+            <form action="onlineportal.html" method="GET">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div>
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderItems = JSON.parse(localStorage.getItem('cartItem')) || [];
+            const cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || {};
+            const totalPriceElement = document.getElementById('totalPrice');
+            let totalPrice = 0;
+
+            const orderItemsContainer = document.getElementById('cart-items');
+            orderItemsContainer.innerHTML = '';
+
+            fetch('products.json')
+                .then(response => response.json())
+                .then(products => {
+                    orderItems.forEach(productId => {
+                        const product = products.find(p => p.id === productId);
+                        if (product) {
+                            const quantity = cartQuantity[productId] || 1;
+                            const itemPrice = parseFloat(product.price) * quantity;
+                            totalPrice += itemPrice;
+
+                            const itemElement = document.createElement('li');
+                            itemElement.classList.add('cart-item');
+                            itemElement.innerHTML = `
+                                <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                                <div class="cart-item-details">
+                                    <h2>${product.name}</h2>
+                                    <p class="price">Price: Rs. ${product.price}</p>
+                                    <p>Quantity: ${quantity}</p>
+                                    <p>Total Price: Rs. ${itemPrice.toFixed(2)}</p>
+                                </div>
+                            `;
+                            orderItemsContainer.appendChild(itemElement);
+                        }
+                    });
+                    totalPriceElement.textContent = totalPrice.toFixed(2);
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+
+            const confirmOrderButton = document.getElementById('confirm-order');
+            const orderSummary = document.getElementById('order-summary');
+            const addressForm = document.getElementById('address-form');
+
+            confirmOrderButton.addEventListener('click', () => {
+                orderSummary.classList.add('active');
+                addressForm.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

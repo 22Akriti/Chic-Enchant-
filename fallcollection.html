@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chic Enchanté - Fall Collection</title>
+    <link rel="stylesheet" href="fallcollection.css">
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-kcDd9xhPC8YZN0oXZJOt75O8b6YOugjtUsXU+GI4d0aEgjNNPaq+C0U0LdwbW2vEa6Uxnl5nRcG/gDHnnH7XfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+  
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="index.html"><img src="/img/logo.png" class="logo" alt="logo" height="270px"></a>
+            <nav>
+                <ul id="navbar">
+                    <li class="dropdown" id="searchDropdown">
+                        <a href="searchResult.html" class="dropbtn">SEARCH</a>
+                    </li>
+                    <li class="dropdown" id="profileDropdown">
+                        <a href="#" class="dropbtn">PROFILE</a>
+                        <div class="dropdown-content">
+                            <a href="signup.html">Sign Up</a>
+                            <a href="login.html">Login</a>
+                            <a href="profile.html">My Profile</a>
+                        </div>
+                    </li>
+                    <li><a href="navbag.html" class="dropbtn">BAG</a></li>
+                    <li><a href="wishlist.html" class="dropbtn">WISHLIST</a></li>
+                    <li class="_dropdown" id="menuDropdown">
+                        <a href="#" class="_dropbtn"><i class='bx bx-menu' style='color:black',></i></a>
+                        <div class="_dropdown-content">
+                            <a href="mencollection.html">Men</a>
+                            <a href="womencollection.html">Women</a>
+                            <a href="cosmetic.html">Cosmetics</a>
+                            <a href="perfumes.html">Fragrances</a>
+                            <a href="green.html">Accessories</a>
+                            <a href="bag.html">Bags</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main">
+        <h1>FALL COLLECTION</h1>
+    </section>
+
+<section id="products">
+    <div class="container">
+        <header>
+            <div class="title"></div>
+            <div class="icon-cart">
+                <!-- <i class='bx bx-shopping-bag' style="color: black;"></i>
+                <span>0</span> -->
+            </div>
+        </header>
+        <div class="listProduct">
+
+        </div>
+        <div class="cartTab">
+            <h2>BAG</h2>
+            <div class="listCart">
+                
+            </div>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+                <a href="onlineportal.html"><button class="checkOut"> CHECK OUT</button></a>
+            </div>
+        </div>
+
+
+        <footer id="footer" class="footer">
+            <div class="container6">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3>Brand Information</h3>
+                        <p>
+                            <a href="faq.html">FAQs</a><br>
+                            <a href="services.html">Services</a><br>
+                            <a href="aboutus.html">About Us</a>
+                        </p>
+                    </div>
+                    <div class="footer-right">
+                        <h3>Contact Us</h3>
+                        <p>Email: contact@example.com</p>
+                        <p>Phone: +1 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="script.js"></script>
+        <script>
+            var currentPage = 'fall';
+        </script>
+<script src="app.js"></script>
+    <script>
+        function toggleHeart(heartIcon) {
+            heartIcon.classList.toggle('clicked'); // Toggle the 'clicked' class on the heart icon
+        }
+    </script>
+    <script src="search.js"></script>
+   
+</section>
+
+</body>
+</html>

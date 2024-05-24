@@ -1,0 +1,278 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.page-container {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    position: relative; /* Make container position relative */
+    z-index: 2; /* Ensure container is above search bar */
+}
+
+.searchBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Adjust as needed */
+    padding: 10px 20px;
+    z-index: 1; /* Ensure search bar is below other content */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px;
+    position: absolute; /* Make header position absolute */
+    top: 0;
+    left: 0;
+    width: 0%;
+    z-index: 3; /* Ensure header is above search bar */
+}
+
+.title {
+    font-size: xx-large;
+}
+
+img {
+    width: 100%;
+    height: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 270px; /* Adjust the width as needed */
+    margin-left: -50px;
+    margin-top: -8vh;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: -10vh;
+    margin-left: 95vh;
+}
+
+#navbar li {
+    margin-right: 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+#navbar li a:hover{
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dropbtn:hover {
+    cursor: pointer;
+}
+
+.bx.bx-menu-dropdown {
+    position: relative;
+}
+
+._dropdown {
+    position: relative;
+}
+
+._dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 100px;
+}
+
+._dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+._dropdown:hover ._dropdown-content {
+    transform: translateY(-12px);
+    display: block;
+}
+
+p{
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.listProduct .item img{
+    width: 100%; 
+     height:73%;
+     display: block;
+     margin: 0 auto; 
+}
+.listProduct{
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding:0;
+   
+}
+.listProduct .item{
+    width: 273px;
+    height:500px;
+    padding: 0;
+    margin-left:0;
+    border: 2px solid #f0f0f0;
+    margin-bottom: 40px; /* Add some space between rows */
+    flex: 0 0 calc(5% -1px); /* Each product box takes 25% of the width with margin adjustment */
+    box-sizing: border-box;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.listProduct .item .price{
+    margin-top: -25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.heart-icon {
+    display: inline;
+    top: 10px;
+    margin-right:0;
+    color: black; 
+    font-size: 24px;
+    cursor: pointer;
+}
+.heart-icon.clicked {
+    color: red; 
+}
+.listProduct .item button{
+    width: 80%;
+        background-color: white;
+        border: 2px solid black;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        margin-bottom:20px ;
+}
+.listProduct .item button:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .listProduct {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 17px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+input {
+    height: 50px;
+    font-size: 1rem;
+    padding: 0px 50px;
+    margin-top: 10px;
+    border-radius: 0;
+    border: 1px solid rgb(166, 169, 166);
+}
+
+input[type="text"] {
+    height: 50px;
+    font-size: 1rem;
+    padding: 0px 50px;
+    border-radius: 0;
+    border: 1px solid gainsboro; /* Set border to transparent initially */
+}
+
+/* Change border color to black when input is clicked */
+input[type="text"]:focus {
+    border-color: black;
+    outline: none; /* Remove default focus outline */
+}
+
+#products {
+    margin-top: 130px; /* Adjust this value as needed to ensure space below the search bar */
+}

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+</head>
+<style>
+    *{
+    font-size:1.2rem;
+}
+body{
+	background-image:url(img/BG1.jpg);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    overflow: hidden;
+}
+.container {
+	width: 35%;
+	height: 85vh;
+	padding: 25px;
+	background-color: white;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 10px #ccc;
+	opacity: 0.75;
+}
+
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(-20px);
+    margin-top:0;
+}
+
+.back{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    margin-top: 15px;
+}
+
+.profile-pic{
+    margin: 0;
+}
+
+.profile-pic img{
+    width: 90px;
+    height: 90px;
+    margin-left:45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: translateX(-30px);
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.profile-inner{
+    border: 1px solid black;
+    width: 500px;display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+input {
+    height: 30px;
+    font-size: 1rem;
+    padding: 0px 10px;
+    margin-top: 10px;
+    border-radius: 0;
+    border: 1px solid rgb(166, 169, 166);
+}
+
+
+.orders{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 1rem ;
+}
+
+.orders div{
+    margin: 1rem;
+    justify-content: left;
+    
+}
+
+
+.wishlist{
+    margin: 1rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.wishlist div{
+    margin: 1rem;
+    
+}
+.buttons{
+    font-family: 'Times New Roman';
+    margin-left: 35px;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    font-size: 25px;
+    cursor: pointer;
+}
+.box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.box div{
+    border: 1px solid black;
+    width: 500px;
+    margin: 10px;
+}
+.box button{
+    margin: 10px;
+}
+button{
+    font-family: 'Times New Roman';
+    color: black;
+    border: none;
+    padding: 7px;
+    font-weight: 900;
+    background: none;
+    font-size: 30px;
+    margin-left: -55px;
+}
+button:hover{
+    text-decoration: underline;
+}
+.profile-inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logout{
+    margin-top: 10px;
+}
+.profile-info{
+    margin-left: 0px;
+    text-align: left;
+}
+.profile-info p{
+    font-weight: 300;
+}
+.edit svg{
+    margin-left: 15px;
+    transform: translateY(6px);
+}
+.non-button button{
+    color: black;
+    background: none;
+    padding: 0;
+    font-size: 20px;
+
+}
+.edit{
+    transform: translateX(-4rem);
+}
+</style>
+<body>
+    <div class="container">
+    <div class="profile-page">
+        <div class="back">
+            <a href="index.html"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
+        </div>
+        <div class="profile">
+            <div class="profile-inner">
+                <div class="profile-pic">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                </div>
+                <div class="profile-details">
+                    <div class="edit">
+                        <button>Profile</button>
+                        <!-- <svg width="24" height="24" viewBox="0 0 24 24" ><path d="M8.707 19.707 18 10.414 13.586 6l-9.293 9.293a1.003 1.003 0 0 0-.263.464L3 21l5.242-1.03c.176-.044.337-.135.465-.263zM21 7.414a2 2 0 0 0 0-2.828L19.414 3a2 2 0 0 0-2.828 0L15 4.586 19.414 9 21 7.414z"></path></svg> -->
+                    </div>
+                    <div class="profile-info">
+                        <p><strong>Name: </strong><span id ="name"></span><br></p>
+                        <p><strong>Email: </strong><span id ="email"></span><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+        <div class="orders">
+            <div class="wishlist-detail">
+                <a href="wishlist.html"><button>Wishlist</button></a>
+            </div>
+        </div>
+        <div class="wishlist">
+            <div class="wishlist - settings">
+                <a href="navbag.html"><button>Bag</button></a>
+            </div>
+        </div>
+    </div>
+        <div class="help center">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"></path><path d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"></path></svg>
+        </div>
+        <div class="box">
+            <div class="non-button">
+                <a href="faq.html"><button>FAQ</button></a><br>
+                <a href="aboutus.html"><button>About Us</button></a><br>
+                <a href="services.html"><button>Services</button></a><br>
+                <button id="signOutButton">Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function clearUserData() {
+    document.getElementById("name").textContent = "Enter your name";
+    document.getElementById("email").textContent = "Enter your email";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    var loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+
+    if (!loggedInUserEmail) {
+        clearUserData();
+    }
+    var users = JSON.parse(localStorage.getItem('users'))||[];
+    var loggedInUser = users.find(function(user) {
+            return user.email === loggedInUserEmail;
+        });
+      if (loggedInUser) {
+        document.getElementById("name").textContent = loggedInUser.name;
+        document.getElementById("email").textContent = loggedInUser.email;
+      } else {
+        alert("No user data found. Please log in again.");
+        clearUserData();
+        window.location.href = "login.html";
+      }
+    });
+    document.getElementById("signOutButton").addEventListener("click", function() {
+            clearUserData();
+            localStorage.removeItem('loggedInUserEmail');
+            window.location.href = "index.html";
+        });
+</script>
+</body>
+</html>

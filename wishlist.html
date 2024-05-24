@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="wishlist.css">
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    .heart-icon {
+    display: inline;
+    top: 10px;
+    margin-right:0;
+    color: red; 
+    font-size: 24px;
+    cursor: pointer;
+}
+</style>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" height="270px"></a>
+            <nav>
+                <ul id="navbar">
+                    <li class="dropdown" id="searchDropdown">
+                        <a href="searchResult.html" class="dropbtn">SEARCH</a>
+                    </li>
+                    <li class="dropdown" id="profileDropdown">
+                        <a href="#" class="dropbtn">PROFILE</a>
+                        <div class="dropdown-content">
+                            <a href="signup.html">Sign Up</a>
+                            <a href="login.html">Login</a>
+                            <a href="profile.html">My Profile</a>
+                        </div>
+                    </li>
+                    <li><a href="navbag.html" class="dropbtn">BAG</a></li>
+                    <li><a href="wishlist.html" class="dropbtn">WISHLIST</a></li>
+                    <li class="_dropdown" id="menuDropdown">
+                        <a href="#" class="_dropbtn"><i class='bx bx-menu' style='color:black',></i></a>
+                        <div class="_dropdown-content">
+                            <a href="mencollection.html">Men</a>
+                            <a href="womencollection.html">Women</a>
+                            <a href="cosmetic.html">Cosmetics</a>
+                            <a href="perfumes.html">Fragrances</a>
+                            <a href="bag.html">Bags</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <section id="products">
+        <div class="container">
+            <div id="wishlist-container" class="wishlist-items"></div>
+        </div>
+    </section>
+    
+
+    <script >
+ const addToCartItem = (productId) => {
+    
+    const cartItem = JSON.parse(localStorage.getItem('cartItem')) || [];
+    if (!cartItem.includes(productId)) {
+        cartItem.push(productId);
+        localStorage.setItem('cartItem', JSON.stringify(cartItem));
+        alert('Product added to Bag!');
+    } else {
+        alert('Product is already in the Cart!');
+    }
+
+};
+ const displayWishlist = () => {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistContainer = document.getElementById('wishlist-container');
+            wishlistContainer.innerHTML = '';
+            if (wishlist.length > 0) {
+                fetch('products.json')
+                    .then(response => response.json())
+                    .then(products => {
+                        wishlist.forEach(productId => {
+                            const product = products.find(p => p.id === productId);
+                            if (product) {
+                                let productItem = document.createElement('div');
+                                productItem.classList.add('wishlist-item');
+                                productItem.innerHTML =
+                                    `<div class="item">
+                                        <img src="${product.image}" alt="">
+                                        <h2>${product.name}</h2>
+                                        <div class="price">Rs.${product.price}</div> 
+                                         <p class="viewDetails">View Details</p>
+                                         
+                                         
+                                         <button class="addCart" onclick="addToCartItem(${product.id})">Add To Bag</button>
+                                        <span class="heart-icon" onclick="removeFromWishlist(${product.id})">&#10084;</span>
+                                    </div>`;
+                                wishlistContainer.appendChild(productItem);
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching products:', error);
+                    });
+            } else {
+                wishlistContainer.textContent = 'Your wishlist is empty!';
+                wishlistContainer.setAttribute('style', `
+                display: flex;
+                margin-top:250px;
+                justify-content: center;
+                align-items: center;
+                height: 50vh;
+                position: relative;
+                top: -30vh; /* Adjust this value to move the text upward */
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                `);
+            }
+        };
+
+        const removeFromWishlist = (productId) => {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(id => id !== productId); // Remove the productId from the wishlist array
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            displayWishlist(); // Refresh the wishlist display
+        };
+
+        displayWishlist();
+    </script>
+
+  <!-- Link to your JavaScript file -->
+</body>
+</html>

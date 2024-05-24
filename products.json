@@ -1,0 +1,453 @@
+[
+  {
+    "id": 1,
+    "name": "Red Cardigan",
+    "price": 599,
+    "image": "/img/WA1.jpg",
+    "image2":"/img/Red1.jpg",
+    "image3":"/img/Red2.jpg",
+    "image4":"/img/Red3.jpg",
+    "tags": ["women", "cardigan", "red", "knitted","cardigans"]
+  },
+  {
+    "id": 2,
+    "name": "Floral Dress",
+    "price": 1599,
+    "image": "/img/WA2.jpg",
+    "tags": ["women", "floral", "dress","dresses"]
+  },
+  {
+    "id": 3,
+    "name": "Navy Blue Shirt",
+    "price": 1999,
+    "image": "/img/WA3.jpg",
+    "tags": ["navy", "blue", "shirt","women","office wear"]
+  },
+  {
+    "id": 4,
+    "name": "Blue Striped Dress",
+    "price": 799,
+    "image": "/img/WA4.jpg",
+    "tags": ["women", "blue", "stripped","dress"]
+  },
+  {
+    "id": 5,
+    "name": "White Co-ord Set",
+    "price": 2299,
+    "image": "/img/WA5.jpg",
+    "tags": ["women", "coords","coord set"]
+  },
+  {
+    "id": 6,
+    "name": "Mini Dress",
+    "price": 899,
+    "image": "/img/WA6.jpg",
+    "tags": ["mini", "women", "dress","white","beige","floral"]
+  },
+  {
+    "id": 7,
+    "name": "Cotton Blue Shirt",
+    "price": 599,
+    "image": "/img/WA7.jpg",
+    "tags": ["women", "shirt", "blue","cotton"]
+  },
+  {
+    "id": 8,
+    "name": "Denim Shirt",
+    "price": 1199,
+    "image": "/img/WA8.jpg",
+    "tags": ["women", "denim", "shirt","blue"]
+  },
+  {
+    "id": 9,
+    "name": "White Shirt",
+    "price": 1799,
+    "image": "/img/MA1.jpg",
+    "tags": ["men", "white", "lenin","shirt"]
+  },
+  {
+    "id": 10,
+    "name": "Olive Turtle Neck",
+    "price": 2599,
+    "image": "/img/MA2.jpg",
+    "tags": ["men", "sweater", "olive","green","fall"]
+  },
+  {
+    "id": 11,
+    "name": "Brown Sweater",
+    "price": 2900,
+    "image": "/img/MA3.jpg",
+    "tags": ["men", "brown", "sweater"]
+  },
+  {
+    "id": 12,
+    "name": "White Polo Shirt",
+    "price": 1590,
+    "image": "/img/MA4.jpg",
+    "tags": ["men", "polo", "shirt","white"]
+  },
+  {
+    "id": 13,
+    "name": "White Pullover Jumper",
+    "price": 300,
+    "image": "/img/MA5.jpg",
+    "tags": ["men", "white", "sweater","stylish","jumper"]
+  },
+  {
+    "id": 14,
+    "name": "Beige Sweater",
+    "price": 300,
+    "image": "/img/MA6.jpg",
+    "tags": ["men", "beige", "sweater"]
+  },
+  {
+    "id": 15,
+    "name": "Navy Blue Half Zipper",
+    "price": 300,
+    "image": "/img/MA7.jpg",
+    "tags": ["men", "blue", "zipper","sweater"]
+  },
+  {
+    "id": 16,
+    "name": "White Trousers",
+    "price": 300,
+    "image": "/img/MA8.jpg",
+    "tags": ["men", "white", "trousers"]
+  },
+    {
+      "id": 17,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC1.jpg",
+      "tags": ["women", "lounge chair", "stylish"]
+    },
+    {
+      "id": 18,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC2.jpg",
+      "tags": ["men", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 19,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC3.jpg",
+      "tags": ["women", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 20,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC4.jpg",
+      "tags": ["men", "lounge chair", "stylish"]
+    },
+    {
+      "id": 21,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC5.jpg",
+      "tags": ["women", "lounge chair", "stylish"]
+    },
+    {
+      "id": 22,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC6.jpg",
+      "tags": ["men", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 23,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC7.jpg",
+      "tags": ["women", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 24,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/SC8.jpg",
+      "tags": ["men", "lounge chair", "stylish"]
+    },
+    {
+      "id": 25,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC1.jpg",
+      "tags": ["women", "lounge chair", "stylish"]
+    },
+    {
+      "id": 26,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC2.jpg",
+      "tags": ["men", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 27,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC3.jpg",
+      "tags": ["women", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 28,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC4.jpg",
+      "tags": ["men", "lounge chair", "stylish"]
+    },
+    {
+      "id": 29,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC5.jpg",
+      "tags": ["women", "lounge chair", "stylish"]
+    },
+    {
+      "id": 30,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC6.jpg",
+      "tags": ["men", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 31,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC7.jpg",
+      "tags": ["women", "lounge chair", "comfortable"]
+    },
+    {
+      "id": 32,
+      "name": "LD05 LOUNGE CHAIR",
+      "price": 300,
+      "image": "/img/FC8.jpg",
+      "tags": ["men", "lounge chair", "stylish"]
+    },
+      {
+        "id": 33,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU1.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 34,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU2.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 35,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU3.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 36,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU4.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 37,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU5.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 38,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU6.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 39,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU7.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 40,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/MU8.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 41,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P1.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 42,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P2.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 43,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P3.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 44,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P4.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 45,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P5.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 46,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P6.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 47,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P7.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 48,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/P8.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 49,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G11.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 50,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G2.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 51,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G3.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 52,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G4.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 53,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G5.jpg",
+        "tags": ["men", "lounge chair", "stylish"]
+      },
+      {
+        "id": 54,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G6.jpg",
+        "tags": ["women", "lounge chair", "stylish"]
+      },
+      {
+        "id": 55,
+        "name": "LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "/img/G7.jpg",
+        "tags": ["men", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 56,
+        "name": "Ivory White Shoulder Bag",
+        "price": 300,
+        "image": "/img/G8.jpg",
+        "tags": ["women", "lounge chair", "comfortable"]
+      },
+      {
+        "id": 57,
+        "name": "Ivory White Shoulder Bag",
+        "price": 2999,
+        "image": "/img/B1.jpg",
+        "tags": ["ivory", "white", "gold","shoulder","bag"]
+      },
+      {
+        "id": 58,
+        "name": "Blue Mini Bag",
+        "price": 2299,
+        "image": "/img/B2.jpg",
+        "tags": ["blue", "mini", "stylish","bag"]
+      },
+      {
+        "id": 59,
+        "name": "White Structured Bag",
+        "price": 1999,
+        "image": "/img/B3.jpg",
+        "tags": ["white", "structures", "handbag","bag"]
+      },
+      {
+        "id": 60,
+        "name": "Brown Bucket Bag",
+        "price": 2999,
+        "image": "/img/B4.jpg",
+        "tags": ["brown", "bucket","shoulder","bag"]
+      },
+      {
+        "id": 61,
+        "name": "Black Crossbody",
+        "price": 2599,
+        "image": "/img/B5.jpg",
+        "tags": ["black", "crossbody", "simple","bag"]
+      },
+      {
+        "id": 62,
+        "name": "Floral Canvas Tote Bag",
+        "price": 999,
+        "image": "/img/B6.jpg",
+        "tags": ["floral", "canvas", "tote","black","bag"]
+      },
+      {
+        "id": 63,
+        "name": "Chocolate Brown Shoulder Bag",
+        "price": 2199,
+        "image": "/img/B7.jpg",
+        "tags": ["brown", "chocolate", "stylish","shoulder","bag"]
+      },
+      {
+        "id": 64,
+        "name": "Leather & Crochet Bag",
+        "price": 3499,
+        "image": "/img/B8.jpg",
+        "tags": ["leather", "crochet", "white","brown","shoulder","bag"]
+      }
+]

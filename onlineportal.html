@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Payment Gateway</title> 
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman';
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: black;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+			height: 150px;
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: -65px; /* Added margin bottom */
+        }
+
+        .payment-container {
+            width: 400px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .payment-container h1 {
+            font-size: 24px;
+            margin: 0 0 20px; /* Added margin bottom */
+        }
+
+        .payment-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align form items to the left */
+        }
+
+        .payment-container label {
+            margin-bottom: 5px;
+        }
+
+        .payment-container input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            width: 100%; /* Make input boxes take full width */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        .payment-container input[type="text"]:focus {
+            outline: none;
+            border-color:black;
+        }
+
+        .payment-container button {
+            font-family: 'Times New Roman';
+            font-size: 20px;
+            padding: 12px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        .payment-container button:hover {
+            text-decoration: underline;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <a href="index.html"><img class="logo" src="img/CEwhite.png" alt="Chic Enchanté Logo"></a>
+        <h1>Payment Gateway</h1> <!-- Moved Payment Gateway below the logo -->
+    </div>
+</header>
+<div class="payment-container">
+    <h1>Proceed to Pay</h1>
+    <form id="payment-form">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" required>
+        <label for="expiry">Expiry Date:</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YYYY" required>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <button type="submit">Pay Now</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <title>FAQ - Chic Enchanté</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            height: 35vh;
+            text-align: center;
+        }
+
+        header img {
+            width: 250px;
+            height: auto;
+            margin-top: -50px;
+        }
+
+        header h1 {
+            margin-top: -60px;
+            font-size: 2rem;
+        }
+
+        .faq-section {
+            padding: 20px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            font-size: 1rem;
+        }
+
+        .faq-question:hover {
+            transition: transform 0.3s;
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html#footer"><img src="img/CEwhite.png" alt="Chic Enchanté Logo" width="150px"></a>
+            <h1>FAQ - Chic Enchanté</h1>
+        </div>
+    </header>
+
+    <div class="container faq-section">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is your return policy?</span>
+                <i class='bx bx-chevron-down icon'></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can return any item within 30 days of purchase for a full refund, provided it is in its original condition and packaging. Please visit our Returns & Exchanges page for more information.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Do you offer international shipping?</span>
+                <i class='bx bx-chevron-down icon'></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer international shipping to most countries. Shipping rates and delivery times vary depending on the destination. Please check our Shipping Information page for details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I track my order?</span>
+                <i class='bx bx-chevron-down icon'></i>
+            </div>
+            <div class="faq-answer">
+                <p>Once your order is shipped, you will receive an email with a tracking number and a link to track your package. You can also log in to your account on our website to view your order status.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What payment methods do you accept?</span>
+                <i class='bx bx-chevron-down icon'></i>
+            </div>
+            <div class="faq-answer">
+                <p>We accept all major credit cards, including Visa, MasterCard, American Express, and Discover. We also accept payments via PayPal and Apple Pay.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I change or cancel my order?</span>
+                <i class='bx bx-chevron-down icon'></i>
+            </div>
+            <div class="faq-answer">
+                <p>If you need to change or cancel your order, please contact our customer service team as soon as possible. We will do our best to accommodate your request, but please note that we cannot make changes once the order has been processed and shipped.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('.icon');
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('rotate');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.add('rotate');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

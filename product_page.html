@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/CE.png" style="width: fit-content;">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Product Page</title>
+    <style>
+        .main {
+            display: grid;
+            width: 90%;
+            height: 70%;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 0px;
+            position: absolute; /* Make header position absolute */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3; /* Ensure header is above search bar */
+        }
+
+        .title {
+            font-size: xx-large;
+        }
+
+        img {
+            width: 100%;
+            height: 70%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 120px; /* Adjust the width as needed */
+            margin-left: -50px;
+            margin-top: -7vh;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+            margin-right: 80px;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            margin-top: -15vh;
+            margin-left: 122vh;
+        }
+
+        #navbar li {
+            margin-right: 20px;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+            transition: transform 0.3s ease;
+        }
+
+        #navbar li a:hover {
+            text-decoration: underline;
+            transform: translateY(-5px);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            min-width: 200px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .dropbtn:hover {
+            cursor: pointer;
+        }
+
+        .bx.bx-menu-dropdown {
+            position: relative;
+        }
+
+        ._dropdown {
+            position: relative;
+        }
+
+        ._dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            min-width: 100px;
+        }
+
+        ._dropdown-content a {
+            color: black;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        ._dropdown:hover ._dropdown-content {
+            transform: translateY(-12px);
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two images per row */
+            gap: 10px;
+            margin-left: 50px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 250px; /* Adjust the maximum width of the images */
+            max-height: 250px; /* Adjust the maximum height of the images */
+            object-fit: cover; /* Ensures the image fits within the specified dimensions */
+            margin-bottom: 10px;
+            padding: 20px; /* Adjust the padding around images */
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .info h1 {
+            font-size: 50px;
+            margin-left: 50px;
+            margin-top: 15vh;
+        }
+
+        .info h3 {
+            font-size: 30px;
+            margin-left: 50px;
+        }
+
+        .details-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .details-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-left: 50px;
+        }
+
+        .details-button:hover {
+            text-decoration: underline;
+            transform: translateY(-5px);
+        }
+
+        .details-dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .details-dropdown p {
+            margin: 0;
+            color: black;
+        }
+
+        .colors {
+            display: flex;
+            flex-direction: row;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            width: 200px;
+            justify-content: space-between;
+            margin-left: 50px;
+        }
+
+        .colors div {
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+        }
+
+        .color1 {
+            background: maroon;
+        }
+
+        .color2 {
+            background: green;
+        }
+
+        .color3 {
+            background: blue;
+        }
+
+        .color4 {
+            background: yellow;
+        }
+
+        .colors div:hover {
+            border: 1.5px solid black;
+        }
+
+        .sizes button {
+            background: white;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .sizes button:hover {
+            border: 2px solid black;
+        }
+
+        .sizes {
+            margin-bottom: 4rem;
+            margin-left: 50px;
+        }
+
+        .cart-button {
+            width: 400px;
+            height: 60px;
+            font-size: 30px;
+            font-family: Georgia;
+            background: black;
+            color: white;
+            border: 3px solid black;
+            margin-left: 50px;
+        }
+
+        .cart-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="womencollection.html"><img src="/img/logo.png" class="logo" alt="logo" height="270px"></a>
+            <nav>
+                <ul id="navbar">
+                    <li class="dropdown" id="searchDropdown">
+                        <a href="searchResult.html" class="dropbtn">SEARCH</a>
+                    </li>
+                    <li class="dropdown" id="profileDropdown">
+                        <a href="#" class="dropbtn">PROFILE</a>
+                        <div class="dropdown-content">
+                            <a href="signup.html">Sign Up</a>
+                            <a href="login.html">Login</a>
+                            <a href="#">My Profile</a>
+                        </div>
+                    </li>
+                    <li><a href="navbag.html" class="dropbtn">BAG</a></li>
+                    <li><a href="wishlist.html">WISHLIST</a></li>
+                    <li class="_dropdown" id="menuDropdown">
+                        <!-- Menu items if needed -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div style="align-content: center;">
+        <div id="productDetails"></div>
+    </div>
+
+    <script>
+        // Function to fetch product details from products.json
+        const addToCartItem = (productId) => {
+            const cartItem = JSON.parse(localStorage.getItem('cartItem')) || [];
+            if (!cartItem.includes(productId)) {
+                cartItem.push(productId);
+                localStorage.setItem('cartItem', JSON.stringify(cartItem));
+                alert('Product added to Cart!');
+            } else {
+                alert('Product is already in the Cart!');
+            }
+        };
+
+        const fetchProductDetails = (productId) => {
+            return fetch('products.json')
+                .then(response => response.json())
+                .then(data => {
+                    const product = data.find(product => product.id === productId);
+                    return product;
+                })
+                .catch(error => {
+                    console.error('Error fetching product details:', error);
+                    return null;
+                });
+        };
+
+        // Function to display product details on the page
+        const displayProductDetails = (product) => {
+            const productDetailsElement = document.getElementById('productDetails');
+            if (product) {
+                productDetailsElement.innerHTML = `
+                    <div class="main">
+                        <div class="item">
+                            <div class="images">
+                                <div class="image">
+                                    <img src="${product.image}" alt="Product Image 1">
+                                </div>
+                                <div class="image">
+                                    <img src="${product.image2}" alt="Product Image 2">
+                                </div>
+                                <div class="image">
+                                    <img src="${product.image3}" alt="Product Image 3">
+                                </div>
+                                <div class="image">
+                                    <img src="${product.image4}" alt="Product Image 4">
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h1>${product.name}</h1>
+                                <h3>Rs. ${product.price}</h3>
+                                <div class="details-container">
+                                    <button id="detailsButton" class="details-button">More Details</button>
+                                    <div id="detailsDropdown" class="details-dropdown">
+                                        <p>This cardigan is made of high-quality wool, providing warmth and comfort. It features a stylish design with a relaxed fit, making it perfect for both casual and formal occasions.</p>
+                                    </div>
+                                </div>
+                                <div class="colors">
+                                    <div class="color1"></div>
+                                    <div class="color2"></div>
+                                    <div class="color3"></div>
+                                    <div class="color4"></div>
+                                </div>
+                                <div class="sizes">
+                                    <button>S</button>
+                                    <button>M</button>
+                                    <button>L</button>
+                                    <button>XL</button>
+                                </div>
+                                <button class="cart-button" onclick="addToCartItem(${product.id})">Add To Bag</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('detailsButton').addEventListener('click', function() {
+                    var dropdown = document.getElementById('detailsDropdown');
+                    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+                        dropdown.style.display = 'block';
+                    } else {
+                        dropdown.style.display = 'none';
+                    }
+                });
+            } else {
+                productDetailsElement.innerHTML = '<p>Product not found.</p>';
+            }
+        };
+
+        // Extract product ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        // Fetch and display product details
+        if (!isNaN(productId)) {
+            fetchProductDetails(productId).then(product => {
+                displayProductDetails(product);
+            });
+        } else {
+            console.error('Invalid product ID.');
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
